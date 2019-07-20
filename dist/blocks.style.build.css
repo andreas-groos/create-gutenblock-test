@@ -9,10 +9,51 @@
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-cgb-block-wp-ticker {
-  background: orangered;
-  border: 0.2rem solid #292929;
-  color: #292929;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem; }
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+
+.wp-block-cgb-block-wp-ticker.ticker-wrap {
+  width: 80%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: black;
+  padding-left: 50%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+  .wp-block-cgb-block-wp-ticker.ticker-wrap .ticker {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;
+    white-space: nowrap;
+    padding-right: 50%;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 30s;
+    animation-duration: 30s; }
+    .wp-block-cgb-block-wp-ticker.ticker-wrap .ticker__item {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 2rem;
+      color: white; }
